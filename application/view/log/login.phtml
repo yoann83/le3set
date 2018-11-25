@@ -1,0 +1,38 @@
+<!--------------------------- FORMULAIRE DE CONNECTION ---------------------------------->
+<main>
+    <form id="container_form" method="post">
+        <fieldset>
+            <legend><h2>Formulaire de connection</h2></legend>
+            <div id="container_form">
+                <h3>Espace de connexion</h3>
+                <ul>
+                    <section class="box_register">
+                    <!-- EMAIL -->
+                        <li>
+                            <label>Adresse email :
+                                <input type="text" id="mail" name="email" placeholder="exemple@web.com" maxlength="40" required />
+                            </label>
+                            <div class="text_erreur"><?php if ( !empty($_GET_error[0]) ) echo $_GET_error[0]; else echo "" ?></div>
+                            <div class="text_erreur"><?php if ( !empty($_GET_error[2]) ) echo $_GET_error[2]; else echo "" ?></div>
+                        </li>
+
+                    <!-- PASSWORD -->
+                        <li>
+                            <label>Mot de passe :
+                                <input type="password" id="password" name="password" minlength="8" maxlength="15" placeholder=" entre 8 et 15 caractères , un chiffre et une majuscule"  required />
+                            </label>
+                            <div class="text_erreur"><?php if ( !empty($_GET_error[1]) ) echo $_GET_error[1]; else echo "" ?></div>
+                            <div class="text_erreur"><?php if ( !empty($_GET_error[3]) ) echo $_GET_error[3]; else echo "" ?></div>
+                        </li>
+
+                    <!-- VALIDATE -->
+                        <li class="form_title">
+                            <button id="button_onform" type="submit" name="login">Valider</button>
+                            <input type="button" id="button_offform" name="notLogin_user" value="Annuler" onclick="window.location.href='<?php HOME ?>?page=home'" />
+                        </li>
+                    </section>
+                </ul>
+            </div>
+        </fieldset>
+    </form>
+</main>

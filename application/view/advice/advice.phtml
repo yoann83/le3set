@@ -1,0 +1,53 @@
+<!-- PAGE DES AVIS AVEC L'AJOUTS D'AVIS USER CONNECTÉ -->
+<meta name="robots" content="noindex" />
+<main>
+    <section>
+        <!-- Liste des avis -->
+        <table class="table_list">
+            <caption><h1>Les avis du restaurant le 3 set</h1></caption>
+            <tbody>
+            <?php foreach ($advices as $advice): ?>
+                <tr class="advice">
+                    <td>
+                        <img src="<?= VIEW_PATH ?>images/img_advice/avis.png">
+                    </td>
+                    <td>
+                        <h2><?= htmlspecialchars($advice['titleAdvice']) ?></h2>
+                        <p><?= nl2br($advice['advice']); ?></p>
+                    </td>
+                    <td>
+                        <h2><?= htmlspecialchars($advice['firstName']) ?></h2>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </section>
+    <form id="container_form" method="post">
+        <fieldset>
+            <legend><h2>Ajouter un avis</h2></legend>
+            <div id="container_form">
+                <ul>
+                    <section class="box_register">
+                        <li>
+                            <label>prénom :</label>
+                            <input type="text" name="pseudo" id="pseudoAdvice" placeholder="Jean.." maxlength="10" value="<?= $_SESSION['prenom']; ?>" required >
+                        </li>
+                        <li>
+                            <label>Titre :</label>
+                            <input type="text" name="titleAdvice" id="titleAdvice" placeholder="Exemple: Accueil chaleureux" maxlength="64" required >
+                        </li>
+                        <li>
+                            <label>Saisir votre avis :</label>
+                            <textarea name="textAdvice" rows="10" cols="40" id="textAdvice" maxlength="650" placeholder="Écrivez votre avis..." required></textarea>
+                        </li>
+                        <li class="form_title">
+                            <label></label>
+                            <button id="button_onform" type="submit" name="advice">Poster mon avis</button>
+                        </li>
+                    </section>
+                </ul>
+            </div>
+        </fieldset>
+    </form>
+</main>

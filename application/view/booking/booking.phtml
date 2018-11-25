@@ -1,0 +1,119 @@
+<!-- PAGE DES RESERVATIONS -->
+<meta name="robots" content="noindex" />
+<!-- Date picker -->
+<script>$( function() {$( '.datepicker' ).datepicker( $.datepicker.regional[ 'fr' ] );} );</script>
+<script src="<?= VIEW_PATH ?>js/datepicker.js"></script>
+
+<main>
+    <form id="container_form" method="post">
+        <fieldset>
+            <legend><h2>Formulaire de réservation</h2></legend>
+            <div id="container_form">
+                <h3>Réservation d'une table ou location de notre salle d'évènement.</h3>
+                <ul>
+                    <section class="box_register">
+                        <!-- LASTNAME / FIRSTNAME -->
+                        <li>
+                            <div class="container_contact">
+                                <div class="li_box">
+                                    <label>Prénom : <i class="fas fa-star"></i>
+                                        <input type="text" title="Saisir votre prénom" value="<?= $_SESSION['prenom']; ?>" id="firstName" name="firstName" maxlength="20" required />
+                                    </label>
+                                    <div class="text_erreur"><?php if ( !empty($_GET_error[0]) ) echo $_GET_error[0]; else echo "" ?></div>
+                                </div>
+                                <div class="li_box">
+                                    <label>Nom : <i class="fas fa-star"></i>
+                                        <input type="text" title="Saisir votre nom" id="lastName" name="lastName" value="<?= $_SESSION['nom']; ?>" maxlength="20" required />
+                                    </label>
+                                    <div class="text_erreur"><?php if ( !empty($_GET_error[1]) ) echo $_GET_error[1]; else echo "" ?></div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- EMAIL -->
+                        <li>
+                            <div class="li_box">
+                                <label>Adresse e-mail : <i class="fas fa-star"></i>
+                                    <input type="text" id="mail" title="Saisir votre adresse E-mail" name="email" value="<?= $_SESSION['mail']; ?>" maxlength="40" required />
+                                </label>
+                                <div class="text_erreur"><?php if ( !empty($_GET_error[2]) ) echo $_GET_error[2]; else echo "" ?></div>
+                            </div>
+                        </li>
+                    </section>
+
+                    <section class="box_register">
+                        <!-- BOOKING TABLE -->
+                        <ul>
+                            <li class="booking_registration_table" onclick="showHide('box_hidden')">
+                                <p>Réservation d'une table <i class="fas fa-arrow-alt-circle-down"></i></p>
+                            </li>
+                        </ul>
+                        <div id="box_hidden" class="hide">
+                            <ul>
+                                <li class="booking_registration_table">
+                                    <div class="container_contact">
+                                        <label>Date :
+                                            <input type="text" class="datepicker" title="Saisir la date de réservation" name="date_table" size="8" >
+                                        </label>
+                                        <label>Heure :
+                                            <input type="time" title="Saisir l'heure de réservation" name="hour_table" >
+                                        </label>
+                                        <label>Nombre de personne :
+                                            <input type="text" id="nb_person" title="Saisir le nombre de personnes" placeholder="8.." name="number_table" size="2" maxlength="2" >
+                                            <div class="text_erreur"><?php if ( !empty($_GET_error[3]) ) echo $_GET_error[3]; else echo "" ?></div>
+                                        </label>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <!-- BOOKING ROOM -->
+                        <ul>
+                            <li class="booking_registration_room" onclick="showHide('box_hidden2')">
+                                <p>Réservation de la salle <i class="fas fa-arrow-alt-circle-down"></i></p>
+                            </li>
+                        </ul>
+                        <!-- HOW MANY PEOPLE -->
+                        <div id="box_hidden2" class="hide">
+                            <ul>
+                                <li class="booking_registration_room">
+                                    <div class="container_contact">
+                                        <label>Date :
+                                            <input type="text" class="datepicker" title="Saisir la date de réservation" name="date_room" size="8" >
+                                        </label>
+                                        <label>Heure :
+                                            <input type="time" title="Saisir l'heure de réservation" name="hour_room" >
+                                        </label>
+                                        <label>Nombre de personne :
+                                            <input type="text" id="nb_person" title="Saisir le nombre de personnes" placeholder="8.." maxlength="2" name="number_room" size="20" >
+                                            <div class="text_erreur"><?php if ( !empty($_GET_error[4]) ) echo $_GET_error[4]; else echo "" ?></div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="booking_registration_room">
+                                    <div class="container_event">
+                                        <label>Événement :
+                                            <select name="theme_room">
+                                                <option value="..." selected >...</option>
+                                                <option value="Une salle pour un professionnel">Professionnel</option>
+                                                <option value="Une salle pour un particulier">Particulier</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul>
+                            <li class="form_title">
+                                <label></label>
+                                <button id="button_onform" type="submit" name="mail_booking">Valider</button>
+                                <input type="button" id="button_offform" name="cancel_booking" value="Annuler" onclick="window.location.href='<?php HOME ?>?page=home'" />
+                            </li>
+                        </ul>
+                    </section>
+            </div>
+            <p class="booking_info">* Après validation de votre demande, un e-mail vous sera envoyé une fois le formulaire validé. </p>
+        </fieldset>
+    </form>
+</main>
+

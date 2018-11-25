@@ -1,0 +1,61 @@
+/*--- Scrollbars ---*/
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+    background-color: #464647 ;
+}
+
+/*--- Fond ---*/
+::-webkit-scrollbar-track-piece {
+    background: transparent none;
+    border: solid 4px transparent;
+    border-right-width: 8px;
+    margin: 4px;
+    -webkit-box-shadow: inset 1px 1px 0 0 #4b3089, inset -1px -1px 0 0 #4b3089;
+}
+
+/*--- Fond pour la barre du bas ---*/
+::-webkit-scrollbar-track-piece:horizontal {
+    border-right-width: 4px;
+    border-bottom-width: 8px;
+}
+
+/*--- Barre ---*/
+::-webkit-scrollbar-thumb {
+    border: solid 0 transparent;
+    border-right-width: 4px;
+    -webkit-border-radius: 5px;
+    -webkit-border-top-right-radius: 9px 5px;
+    -webkit-border-bottom-right-radius: 9px 5px;
+    -webkit-box-shadow: inset 0 0 0 1px #ad4197, inset 0 0 0 6px #ad4197;
+}
+
+/*--- Barre ---*/
+::-webkit-scrollbar-thumb:hover {
+    -webkit-box-shadow: inset 0 0 0 1px #4b3089, inset 0 0 0 6px #4b3089;
+}
+
+/*--- Barre du bas ---*/
+::-webkit-scrollbar-thumb:horizontal {
+    border-right-width: 0;
+    border-bottom-width: 4px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px 9px;
+    -webkit-border-bottom-left-radius: 5px 9px;
+}
+
+/*--- Boutons vertical et horizontaux ---*/
+::-webkit-scrollbar-button, ::-webkit-scrollbar-button:horizontal, ::-webkit-scrollbar-corner  {
+    height: 26px;
+    background-color: #464647;
+}
+
+/*--- Bouton pour descendre ---*/
+::-webkit-scrollbar-button:increment {
+    background-position: -19px 50%;
+}
+
+/*--- Bouton pour aller à droite ---*/
+::-webkit-scrollbar-button:horizontal:increment {
+    background-position: 50% -19px;
+}

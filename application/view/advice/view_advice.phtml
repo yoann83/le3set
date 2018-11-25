@@ -1,0 +1,26 @@
+<!-- PAGE DES D'AVIS USER NON CONNECTÉ -->
+<meta name="robots" content="noindex" />
+<main>
+    <section>
+        <!-- Liste des avis -->
+        <table class="table_list">
+            <caption><h1>Les avis du restaurant le 3 set</h1></caption>
+            <tbody>
+            <?php foreach ($advices as $advice): ?>
+                <tr class="advice">
+                    <td>
+                        <img src="<?= VIEW_PATH ?>images/img_advice/avis.png">
+                    </td>
+                    <td>
+                        <h2><?= htmlspecialchars($advice['titleAdvice']) ?></h2>
+                        <p><?= nl2br($advice['advice']); ?></p>
+                    </td>
+                    <td>
+                        <h2><?= htmlspecialchars($advice['firstName']) ?></h2>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </section>
+</main>

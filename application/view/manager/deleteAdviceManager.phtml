@@ -1,0 +1,38 @@
+<!-- PAGE MANAGER SUPRESSION DES AVIS -->
+<meta name="robots" content="noindex" />
+<main>
+    <?php require_once "application/view/manager/boxNavManager.phtml" ?>
+
+    <!-- Liste des avis -->
+    <section>
+        <table class="table_list_manager">
+            <caption><h1>Supprimer un avis</h1></caption>
+            <tbody>
+            <?php foreach ($advices as $advice): ?>
+                <tr class="advice">
+                    <td>
+                        <form class="container_operation" method="post">
+                            <div class="managerOperation">
+                                <label>
+                                    <input type="text" id="deleteAdvice" name="idAdvice" value="<?= htmlspecialchars($advice['id']) ?>" maxlength="2" required >
+                                </label>
+                                <button id="button_offform" type="submit" name="deleteAdvice"><i class="fas fa-trash-alt"></i></button>
+                            </div>
+                        </form>
+                    </td>
+                    <td>
+                        <img src="<?= VIEW_PATH ?>images/img_advice/avis.png">
+                    </td>
+                    <td>
+                        <h2><?= htmlspecialchars($advice['titleAdvice']) ?></h2>
+                        <p><?= htmlspecialchars($advice['advice']); ?></p>
+                    </td>
+                    <td>
+                        <h2>corentin</h2>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </section>
+</main>

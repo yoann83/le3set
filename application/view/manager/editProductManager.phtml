@@ -1,0 +1,71 @@
+<main>
+    <?php require_once "application/view/manager/boxNavManager.phtml" ?>
+    <meta name="robots" content="noindex" />
+    <section>
+
+        <!-- ADD IMAGE -->
+        <form id="ajout_form" method="post" action="<?="application/view/images/img_card/"?>upload.php" enctype="multipart/form-data">
+            <fieldset>
+                <legend><h2>Gestion des images</h2></legend>
+                <div id="container_form">
+                    <h3>Ajouter une image lié au produit "<em><?= htmlspecialchars($Product['titleProduct']) ?></em> "</h3>
+                    <ul>
+                        <!-- PICTURE -->
+                        <li>
+                            <!-- On limite le fichier à 100Ko -->
+                            <input type="hidden" name="MAX_FILE_SIZE" value="300000 ">
+                            Image à poster sur le serveur <em>"pas de caractère spéciaux, dimension requis (200 x 165), taille 40Ko max</em> :
+                            <input type="file" name="avatar">
+                            <input id="button_onform" type="submit" value="Envoyer">
+                        </li>
+                    </ul>
+            </fieldset>
+        </form>
+
+        <!-- ADD PRODUCT -->
+        <form id="ajout_form" method="post">
+            <!-- Utilisation d'un champ caché pour spécifier à quel article rattacher le commentaire -->
+            <input type="hidden" name="editId" value="<?= intval($http_id) ?>">
+            <fieldset>
+                <legend><h2>Gestion des produits</h2></legend>
+                <div id="container_form">
+                    <h3>Éditer votre produit "<em><?= htmlspecialchars($Product['titleProduct']) ?></em> "</h3>
+                    <ul>
+
+                        <!-- PICTURE -->
+                        <li>
+                            <label>Nom de l'image associé au menu <em>"précédemment téléchargé au dessus"</em> :
+                                <input type="text" id="Product" value="<?= htmlspecialchars($Product['picture']) ?>" name="picture" maxlength="22" placeholder="Hot-Dog.png"  required />
+                            </label>
+                        </li>
+                        <!-- TITLE -->
+                        <li>
+                            <label>Titre :
+                                <input type="text" id="Product" value="<?= htmlspecialchars($Product['titleProduct']) ?>" name="titleProduct" maxlength="50" placeholder="Hot-Dog..."  required />
+                            </label>
+                        </li>
+
+                        <!-- DESCRIPTION -->
+                        <li>
+                            <label>Description :</label>
+                            <textarea name="description" rows="10" cols="40" id="Product" maxlength="650" placeholder="Le typique sandwitch américain avec sa saucisse cuite accompagnée..." required><?= htmlspecialchars($Product['description']) ?></textarea>
+                        </li>
+
+                        <!-- PRIX -->
+                        <li>
+                            <label>Prix :
+                                <input type="text" value=" <?= number_format($Product['priceSingle'], 2) ?>" id="priceSingle" name="priceSingle" placeholder="20.90" maxlength="5" required />
+                                €
+                            </label>
+                        </li>
+
+                        <!-- VALIDATE -->
+                        <li class="form_title">
+                            <button id="button_onform" type="submit" name="editProduct" onclick="window.location.href='<?php HOME ?>?page=manager/cardManager'">Editer le produit</button>
+                        </li>
+                    </ul>
+                </div>
+            </fieldset>
+        </form>
+    </section>
+</main>

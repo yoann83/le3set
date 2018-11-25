@@ -1,0 +1,85 @@
+<!-- PAGE CONTACT -->
+<meta name="robots" content="noindex" />
+<main>
+    <form id="contact_form" method="post">
+        <fieldset>
+            <legend><h2>Contacter le 3 SET</h2></legend>
+            <h3>Une question, une information, une suggestion ? Contacter-nous en utilisant le formulaire ci-dessous</h3>
+            <div id="container_form">
+                <ul>
+                    <section class="box_register">
+                        <!-- LASTNAME / FIRSTNAME -->
+                        <li>
+                            <div class="container_contact">
+                                <div class="li_box">
+                                    <label>Prénom : <i class="fas fa-star"></i>
+                                        <input type="text" id="firstName" name="firstName" placeholder="Dupond" maxlength="20" required />
+                                    </label>
+                                    <div class="text_erreur"><?php if ( !empty($_GET_error[0]) ) echo $_GET_error[0]; else echo "" ?></div>
+                                </div>
+                                <div class="li_box">
+                                    <label>Nom : <i class="fas fa-star"></i>
+                                        <input type="text" id="lastName" name="lastName" placeholder="Jean" maxlength="20" required />
+                                    </label>
+                                    <div class="text_erreur"><?php if ( !empty($_GET_error[1]) ) echo $_GET_error[1]; else echo "" ?></div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- EMAIL -->
+                        <li>
+                            <div class="li_box">
+                                <label>Adresse e-mail : <i class="fas fa-star"></i>
+                                    <input type="text" id="mail" name="email" placeholder="exemple@web.com" maxlength="40" required />
+                                </label>
+                                <div class="text_erreur"><?php if ( !empty($_GET_error[2]) ) echo $_GET_error[2]; else echo "" ?></div>
+                            </div>
+                        </li>
+                    </section>
+
+                    <section class="box_register">
+                        <!-- THEME -->
+                        <li>
+                            <label>Thème :
+                                <select name="theme">
+                                    <option value="Suggestion">Suggestion</option>
+                                    <option value="Problème de connexion">Problème de connexion</option>
+                                    <option value="Réclamation">Réclamation</option>
+                                    <option value="Désabonnement de la news-letter">Désabonnement de la news-letter</option>
+                                    <option value="Autres" selected>Autres</option>
+                                </select>
+                            </label>
+                        </li>
+
+                        <!-- CONTENT -->
+                        <li>
+                            <div class="text_contact">
+                                <label>Questions / requêtes :
+                                    <textarea id="textarea_contact" name="text_mail" rows="10"></textarea>
+                                </label>
+                            </div>
+                        </li>
+
+                        <!-- VALIDATE -->
+                        <li class="form_title">
+                            <label></label>
+                            <button id="button_onform" type="submit" name="send_mail">Valider</button>
+                            <input type="button" id="button_offform" name="send_mail" value="Annuler" onclick="window.location.href='<?php HOME ?>?page=home'" />
+                        </li>
+                    </section>
+                </ul>
+            </div>
+            <div class="infos_contact">
+                <p class="contact_info">* Pour une réinitialisation de votre mot de passe, l'équipe vous contactera par mail dans les plus brefs délais.</p>
+                <p class="contact_info">* Un e-mail vous sera envoyé une fois le formulaire validé.</p>
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2911.5896985869012!2d5.
+            997995115724807!3d43.13414479385618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.
+            1!3m3!1m2!1s0x12c9199e196bb1bf%3A0xeedf285f8bb21682!2s342+Avenue+%C3%89ole%2C+83160+La+
+            Valette-du-Var!5e0!3m2!1sfr!2sfr!4v1534238306052"
+                    width="100%" height="350" frameborder="0" allowfullscreen>
+            </iframe>
+        </fieldset>
+    </form>
+</main>
+

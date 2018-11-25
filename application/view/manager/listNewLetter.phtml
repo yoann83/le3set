@@ -1,0 +1,51 @@
+<!-- PAGE DES MENUS -->
+<meta name="robots" content="noindex" />
+<main>
+    <?php require_once "application/view/manager/boxNavManager.phtml" ?>
+
+    <section>
+        <!-- Liste des produits -->
+        <div>
+            <table class="table_list">
+                <caption><h1>Liste des membres de la news letter</h1></caption>
+                <tbody>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>E-mail</th>
+                    <th>Adresse</th>
+                    <th>Complément d'adresse</th>
+                    <th>Ville</th>
+                    <th>Code postale</th>
+                </tr>
+                    <?php foreach ($registers as $register): ?>
+                    <tr id="list_new_letter">
+                        <td>
+                            <p><?= htmlspecialchars(strtoupper($register['lastName'])) ?></p>
+                        </td>
+                        <td>
+                            <p><?= htmlspecialchars($register['firstName']) ?></p>
+                        </td>
+                        <td>
+                            <p><?= htmlspecialchars($register['email']) ?></p>
+                        </td>
+                        <td>
+                            <p><?= htmlspecialchars($register['adressLine1']) ?></p>
+                        </td>
+                        <td>
+                            <p><?= htmlspecialchars($register['adressLine2']) ?></p>
+                        </td>
+                        <td>
+                            <p><?= htmlspecialchars($register['city']) ?></p>
+                        </td>
+                        <td>
+                            <p><?= htmlspecialchars($register['zipCode']) ?></p>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+

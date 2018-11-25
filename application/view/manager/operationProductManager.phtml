@@ -1,0 +1,47 @@
+<!-- PAGE MANAGER SUPRESSION DES PRODUITS -->
+<meta name="robots" content="noindex" />
+<main>
+    <?php require_once "application/view/manager/boxNavManager.phtml" ?>
+        <!-- Supprimer un produit -->
+    <section>
+        <table class="table_list_manager">
+            <caption><h1>Carte du restaurant</h1></caption>
+            <tbody>
+            <?php foreach ($Products as $Product): ?>
+                <tr>
+                    <td>
+                        <form class="container_operation" method="post">
+                            <div class="managerOperation">
+                                <label>
+                                    <input type="text" id="deleteProduct" name="idProduct" value="<?= htmlspecialchars($Product['id']) ?>" maxlength="2" required >
+                                </label>
+                                <button id="button_offform" type="submit" name="deleteProduct"><i class="fas fa-trash-alt"></i></button>
+                            </div>
+                        </form>
+                        <form class="container_operation" method="GET">
+                            <div class="managerOperation">
+                                <label>
+                                    <input type="text" id="editProduct" name="idEditProduct" value="<?= htmlspecialchars($Product['id']) ?>" maxlength="2" required >
+                                </label>
+                                <a href="<?php htmlspecialchars(HOME) ?>?page=manager/editProductManager&id=<?= htmlspecialchars($Product['id']) ?>" id="button_offform" type="submit" name="editProduct"><i class="fas fa-edit"></i></a>
+                            </div>
+                        </form>
+                    </td>
+                    <td>
+                        <img src="application/view/images/img_card/<?= $Product['picture'] ?>">
+                    </td>
+                    <td>
+                        <h2><?= htmlspecialchars($Product['titleProduct']) ?></h2>
+                        <p><?= htmlspecialchars($Product['description']) ?></p>
+                    </td>
+                    <td>
+                <span class="price">
+                   <?= number_format($Product['priceSingle'], 2) ?> €
+                </span>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </section>
+</main>

@@ -1,0 +1,29 @@
+<!-- PAGE DES MENUS -->
+<meta name="robots" content="noindex" />
+<main>
+    <section>
+        <!-- Liste des produits -->
+        <table class="table_list">
+            <caption><h1>Carte du restaurant</h1></caption>
+            <tbody>
+            <?php foreach ($Products as $Product): ?>
+                <tr>
+                    <td>
+                        <img src="<?= VIEW_PATH ?>images/img_card/<?= $Product['picture'] ?>">
+                    </td>
+                    <td>
+                        <h2><?= htmlspecialchars($Product['titleProduct']) ?></h2>
+                        <p><?= htmlspecialchars($Product['description']) ?></p>
+                    </td>
+                    <td>
+                <span class="price">
+                   <?= number_format($Product['priceSingle'], 2) ?> €
+                </span>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </section>
+</main>
+

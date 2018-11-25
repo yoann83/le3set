@@ -1,0 +1,156 @@
+<!--------------------------- FORMULAIRE D'INSCRIPTION ---------------------------------->
+<main>
+    <form id="container_form" method="post">
+        <fieldset>
+            <div id="container_form">
+                <h3>La satisfaction de nos clients étant notre priorité au seins de notre restaurant, nous vous remercions par avance de vous inscire afin de mieux répondre à vos attentes.</h3>
+                <ul>
+                    <section class="box_register">
+                        <!-- M / MME -->
+                        <li class="form_li">
+                            <div class="container_title">
+                                <label>Madame
+                                    <input class="title" type="radio" name="title" value="Madame" required />
+                                </label>
+                                <label >Monsieur
+                                    <input class="title" type="radio" name="title" value="Monsieur" required />
+                                </label>
+                            </div>
+                        </li>
+
+                        <!-- LASTNAME / FIRSTNAME -->
+                        <li>
+                            <div class="container_contact">
+                                <div class="li_box">
+                                    <label>Prénom : <i class="fas fa-star"></i>
+                                        <input type="text" id="firstName" name="firstName" placeholder="Dupond" maxlength="20" required />
+                                    </label>
+                                    <div class="text_erreur"><?php if ( !empty($_GET_error[0]) ) echo $_GET_error[0]; else echo "" ?></div>
+                                </div>
+                                <div class="li_box">
+                                    <label>Nom : <i class="fas fa-star"></i>
+                                        <input type="text" id="lastName" name="lastName" placeholder="Jean" maxlength="20" required />
+                                    </label>
+                                    <div class="text_erreur"><?php if ( !empty($_GET_error[1]) ) echo $_GET_error[1]; else echo "" ?></div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- PASSWORD -->
+                        <li>
+                            <div class="container_contact">
+                                <!-- PASSWORD -->
+                                <div class="li_box">
+                                    <label>Saisissez votre mot de passe : <i class="fas fa-star"></i>
+                                        <input type="password" title=" 8 caractères minimum , un chiffre et une majuscule" id="password" name="password" minlength="8" maxlength="15" placeholder=" 8 caractères minimum , un chiffre et une majuscule"  required />
+                                        </label>
+                                    <div class="text_erreur"><?php if ( !empty($_GET_error[2]) ) echo $_GET_error[2]; else echo "" ?></div>
+                                </div>
+                                <!-- CONFIRM PASSWORD -->
+                                <div class="li_box">
+                                    <label>Confirmez votre mot de passe : <i class="fas fa-star"></i>
+                                        <input type="password" id="conf_password" name="confPassword" minlength="8" maxlength="15" placeholder=" Saisissez à nouveau vôtre mot de passe"  required />
+                                    </label>
+                                    <div class="text_erreur"><?php if ( !empty($_GET_error[3]) ) echo $_GET_error[3]; else echo "" ?></div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- EMAIL -->
+                        <li>
+                            <div class="li_box">
+                                <label>Adresse e-mail : <i class="fas fa-star"></i>
+                                    <input type="text" id="mail" name="email" placeholder="exemple@web.com" maxlength="40" required />
+                                </label>
+                                <div class="text_erreur"><?php if ( !empty($_GET_error[4]) ) echo $_GET_error[4]; else echo "" ?></div>
+                            </div>
+                        </li>
+                    </section>
+
+                    <section class="box_register">
+                        <!-- ADRESSE 1 -->
+                        <li>
+                            <label>Adresse postal : <i class="fas fa-star"></i>
+                                <input type="text" id="adress1" name="adressLine1" placeholder="Chemin des.." maxlength="60" required />
+                            </label>
+                        </li>
+
+                        <!-- ADRESSE 2 -->
+                        <li>
+                            <label>Complément d'adresse :
+                                <input type="text" id="adress2" name="adressLine2" placeholder="Résidence.." maxlength="60" />
+                            </label>
+                        </li>
+
+                        <!-- CODE POSTALE -->
+                        <li>
+                            <div class="container_contact">
+                                <div class="li_box">
+                                    <label>Code postal : <i class="fas fa-star"></i>
+                                        <input maxlength="5" type="text" id="code" name="zipCode" placeholder="83.." required />
+                                    </label>
+                                    <div class="text_erreur"><?php if ( !empty($_GET_error[5]) ) echo $_GET_error[5]; else echo "" ?></div>
+                                </div>
+                                <!-- VILLE -->
+                                <div class="li_box">
+                                    <label>Ville : <i class="fas fa-star"></i>
+                                        <input type="text" id="city" name="city" placeholder="Toulon" maxlength="20" required />
+                                    </label>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- TELEPHONE -->
+                        <li>
+                            <div class="container_contact">
+                                <div class="li_box">
+                                    <label>Tél. fixe :
+                                        <input id="phone" type="text" name="phoneNumber" placeholder="04.." maxlength="10" />
+                                    </label>
+                                    <div class="text_erreur"><?php if ( !empty($_GET_error[6]) ) echo $_GET_error[6]; else echo "" ?></div>
+                                </div>
+                                <!-- PORTABLE -->
+                                <div class="li_box">
+                                    <label>Tél. portable :
+                                        <input id="phone_mobil" type="text" name="phoneNumber2" placeholder="07.." maxlength="10" />
+                                    </label>
+                                    <div class="text_erreur"><?php if ( !empty($_GET_error[7]) ) echo $_GET_error[7]; else echo "" ?></div>
+                                </div>
+                            </div>
+                        </li>
+                    </section>
+
+                    <section class="box_register">
+                        <!-- ASK 1 -->
+                        <li>
+                            <div class="container_answer">
+                                <div class="li_box">
+                                    <label>Voulez-vous souscrire à l'actualité de notre restaurant ?</label>
+                                </div>
+                                <div class="li_box">
+                                    <label class="label_title" >Oui
+                                        <input class="answer" type="radio" name="newLetter" value="1" onclick="radioEvent('unset');" checked />
+                                    </label>
+                                    <label class="label_title" >non
+                                        <input class="answer" type="radio" name="newLetter" value="0" onclick="radioEvent('none');" />
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- ASK 2 -->
+                            <div id="box_hidden">
+                                <p><em>Si vous souhaitez vous désabonner à notre news-letter, veuillez envoyer un mail à l'aide de la rubrique <a href="<?php HOME ?>?page=user/contact">contactez-nous.</a></em></p>
+                            </div>
+                        </li>
+
+                        <!-- VALIDATE -->
+                        <li class="form_li">
+                            <button id="button_onform" type="submit" name="register_user" >Valider</button>
+                            <input type="button" id="button_offform" name="notRegister_user" value="Annuler" onclick="window.location.href='<?php HOME ?>?page=home'" />
+                        </li>
+                    </section>
+                </ul>
+                <p class="contact_info">* Un e-mail vous sera envoyé une fois le formulaire validé.</p>
+            </div>
+        </fieldset>
+    </form>
+</main>

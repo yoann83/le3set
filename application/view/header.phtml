@@ -1,0 +1,79 @@
+<!-- HEADER -->
+<meta name="robots" content="noindex" />
+<header>
+    <section>
+        <div class="container_nav">
+            <div class="logo_tct">
+                <a href="<?php htmlspecialchars(HOME) ?>?page=home"><img src="<?= VIEW_PATH ?>images/logo_tct.jpg" alt="logo_tct" title="Le 3 SET"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li id="home">
+                        <a href="<?php htmlspecialchars(HOME) ?>?page=home"><i class="fas fa-home"></i><br>Accueil</a>
+                    </li>
+                    <li id="card">
+
+                        <!-- POINTER SUR LE MAIN CONTROLLER-->
+                        <a href="<?php htmlspecialchars(HOME) ?>?page=user/card"><i class="fas fa-book-open"></i><br>La carte</a>
+                    </li>
+                    <li id="booking" class="<?= $_SESSION['visible'] ?>">
+                        <a href="<?php htmlspecialchars(HOME) ?>?page=booking/booking"><i class="fas fa-utensils"></i><br>Réservation</a>
+                    </li>
+                    <li id="advice" class="<?= $_SESSION['visible'] ?>">
+                        <a href="<?php htmlspecialchars(HOME) ?>?page=advice/advice"><i class="fas fa-comment-dots"></i><br>Les avis</a>
+                    </li>
+                    <li id="contact">
+                        <a href="<?php htmlspecialchars(HOME) ?>?page=user/contact"><i class="fa fa-envelope"></i><br>Contactez-nous</a>
+                    </li>
+                    <li id="contact" class="<?= $_SESSION['Admin'] ?>">
+                        <a href="<?php htmlspecialchars(HOME) ?>?page=manager/cardManager"><i class="fas fa-laptop-code"></i><br>Admin</a>
+                    </li>
+                </ul>
+                <h1>Restaurant le 3 SET du Tennis Club Toulonnais</h1>
+            </nav>
+        </div>
+        <div class="box_login">
+            <div class="<?= $_SESSION['visible'] ?>">
+                <p>Connexion réussie ! <br />
+                    L'équipe le 3 SET vous souhaite la bienvenue</p>
+                    <p><strong><span class="user"><?= $_SESSION['prenom'];?> <?= strtoupper($_SESSION['nom']);?></span></strong></p>
+                <div class="log_tct">
+                    <a href="<?= HOME ?>application/controller/log/deconnexion.php" class="login">Déconnection</a>
+                </div>
+            </div>
+            <!-- s'il est connecté (session ouverte) "offline" DISPLAY: NONE -->
+            <div class="<?= $_SESSION['hide'] ?>">
+                <p>Connectez-vous</p>
+                <p>pour réserver une table / la salle ou poster un avi !</p>
+                <div class="log_tct">
+                    <a href="<?php htmlspecialchars(HOME) ?>?page=log/register" class="login">S'enregistrer</a>
+                    <a href="<?php htmlspecialchars(HOME) ?>?page=log/login" class="login">Se connecter</a>
+                </div>
+                <a href="<?php htmlspecialchars(HOME) ?>?page=user/contact" class="mdp_forget">Mot de passe oublié, contactez-nous</a>
+            </div>
+            <div id="date">
+                <script type="text/javascript" src="<?= VIEW_PATH ?>js/utilities.js"></script>
+                <p id="heure"></p>
+            </div>
+            <div class="hide_smatphone">
+                <hr>
+                <button class="box_nav_in"><i class="fas fa-sign-in-alt"></i> Espace de connexion</button>
+                <a href="<?php htmlspecialchars(HOME) ?>?page=home"><i class="fas fa-chevron-circle-up"></i></a>
+            </div>
+        </div>
+    </section>
+</header>
+<body onload="initDefile()">
+<div class="box_pop">
+    <?php if (isset($Homes)) {
+        foreach ($Homes as $home): ?>
+            <span id="text_pop"><?= htmlspecialchars($home['pop']) ?></span>
+        <?php endforeach;
+    } ?>
+</div>
+<div class="button_pop">
+    <a class="button_play" title="Rafraichir la page" href="#" onclick='window.location.reload(false)'><i class="fas fa-sync-alt"></i></a>
+    <a class="button_pause" title="Mettre en pause" href="#" onclick="myStopFunction()"><i class="fas fa-pause"></i></a>
+    <a class="button_play" title="Redémarage du texte" href="#" onclick="myPlayFunction()"><i class="fas fa-play"></i></a>
+</div>
+</body>

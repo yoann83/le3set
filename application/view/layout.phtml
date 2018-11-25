@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="google-site-verification" content="bAXhN8JhxS2Ep4kwOomkykxyxXvfsrrIMQdIXsTkTVA" />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="<?= VIEW_PATH ?>css/normalize.css">
+        <link rel="stylesheet" href="<?= VIEW_PATH ?>css/style.css">
+        <link rel="stylesheet" href="<?= VIEW_PATH ?>css/scroolbar.css">
+
+        <!-- BIBLIOTHEQUE FONTS + FONTAWESOME -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Amiko" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Cantata+One" rel="stylesheet">
+
+        <!-- JQUERY-->
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <!-- slider -->
+        <meta name="keywords" content="camera js,camera carousel,camera slideshow,Website,Web Design,Web Development">
+        <meta name="description" content="Camera a free jQuery slideshow with many effects, transitions, adaptive layout, easy to customize, using canvas and mobile ready.">
+
+        <!-- icon central -->
+        <link rel="icon" type="image/x-icon" href="<?= VIEW_PATH ?>images/loade.gif">
+
+        <title>Restaurant - TCT Le 3 SET </title>
+    </head>
+    <body>
+        <header>
+            <?php// require_once "application/controller/log/session_start.php" ?>
+            <?php require_once "header.phtml" ?>
+        </header>
+
+            <?php require_once "application/view/$template.phtml" ?>
+
+        <!-- Accueil du site TCT -->
+        <script>
+            // je définie la constante HOME pour les liens vers l'accueil
+            const HOME = "<?= htmlspecialchars(HOME) ?>";
+        </script>
+
+        <!-- Camera Slider CSS -->
+        <link href="<?= VIEW_PATH ?>css/camera.css" rel="stylesheet" type="text/css"/>
+        <script src="<?= VIEW_PATH ?>js/modernizr-3.5.0.min.js"></script>
+
+    </body>
+    <footer>
+        <?php require_once "footer.phtml" ?>
+    </footer>
+</html>

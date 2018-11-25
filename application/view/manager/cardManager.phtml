@@ -1,0 +1,58 @@
+<!-- PAGE MANAGER CHANGEMENT TEXTE D'ACCUEIL/DÉROULANT -->
+<meta name="robots" content="noindex" />
+<main>
+    <?php require_once "application/view/manager/boxNavManager.phtml" ?>
+
+    <!-- Changement de text d'accueil -->
+    <section>
+        <form id="container_form" method="post">
+            <fieldset>
+                <legend><h2>Modification du texte d'accueil</h2></legend>
+                <div id="container_form">
+                    <section class="box_register">
+                        <ul>
+
+                            <!-- TITLE -->
+                            <li>
+                                <label>Titre du texte d'accueil :</label>
+                                <input type="text" name="titleHome" id="titleHome" placeholder="Titre de bienvenu..." maxlength="64" />
+                            </li>
+
+                            <!-- TEXT ACCUEIL -->
+                            <li>
+                                <label>Saisir votre message d'accueil :</label>
+                                <textarea name="textHome" rows="7" cols="10" id="textHome" maxlength="600" placeholder="Écrivez votre message qui s'affichera à la page d'accueil du site." ></textarea>
+                            </li>
+                            <li class="form_title">
+                                <label></label>
+                                <button id="button_onform" type="submit" name="textAccueil">Poster mon text</button>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </fieldset>
+        </form>
+
+        <!-- Changement de text déroulant -->
+        <form id="container_form" method="post">
+            <fieldset>
+                <legend><h2>Modification du texte déroulant</h2></legend>
+                <div id="container_form">
+                    <section class="box_register">
+                        <ul>
+                            <!-- TEXT POP -->
+                            <li>
+                                <label>Texte déroulant :</label>
+                                <textarea name="textPop" rows="2" cols="40" id="textPop" maxlength="76" placeholder="Message qui actualise mon texte déroulant !" ></textarea>
+                            </li>
+                            <li class="form_title">
+                                <label></label>
+                                <button id="button_onform" type="submit" name="Pop">Actualiser</button>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </fieldset>
+        </form>
+    </section>
+</main>

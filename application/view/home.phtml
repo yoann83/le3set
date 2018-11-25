@@ -1,0 +1,155 @@
+<!-- PAGE D'ACCUEIL -->
+<meta name="robots" content="noindex" />
+<main>
+    <section class="home_container_infos">
+        <article id="article_infos1">
+            <div class="home_article">
+                <p id="home_infos1"><span class="title_infos">Ouverture</span><br/>
+                    7 jours sur 7<br/>
+                    De 08:00 - 20:00
+                </p>
+            </div>
+            <div class="home_article">
+                <p id="home_infos2"><span class="title_infos">Tous les Vendredi</span><br/>
+                    Midi Ambiance Resto<br/>
+                    Soir Ambiance Padel
+                </p>
+            </div>
+            <div class="home_article">
+                <p id="home_infos3"><span class="title_infos">Nous suivre</span><br/>
+                    Sur notre réseau Social<br/>
+                    <a href="https://fr-fr.facebook.com/pages/category/Restaurant/Restaurant-Le-3-Set-2115807588690996/" class="link_infos" target="_blank">Facebook !</a>
+                </p>
+            </div>
+        </article>
+        <article id="article_infos2">
+            <p>Le restaurant le 3 Set vous propose <span class="title_infos">une salle d'événement</span> que ce soit un repas d'affaire ou une soirée dansante.
+                Il vous sufit de vous <a href="<?php htmlspecialchars(HOME) ?>?page=log/register" class="link_infos">enregistrer</a>
+                ou de vous <a href="<?php htmlspecialchars(HOME) ?>?page=log/login" class="link_infos">connecter</a>
+                et de réserver notre salle et nous établirons votre devis.</p>
+        </article>
+    </section>
+    <section class="home_container">
+        <article>
+            <!-- start slider -->
+            <div class="container">
+                <div class="row">
+                    <!--Camera Slide-->
+                    <div class="camera_wrap">
+                        <div data-src="application/view/images/img_slider/1.jpg">
+                            <img src="<?= VIEW_PATH ?>images/img_slider/1.jpg" alt="image1_club_tct">
+                            <div class="camera_caption">
+                                <p>Vue imprenable sur les terrains de tennis</p>
+                            </div>
+                        </div>
+                        <div data-src="application/view/images/img_slider/2.jpg">
+                            <img src="<?= VIEW_PATH ?>images/img_slider/2.jpg" class="img-responsive" alt="image2_club_tct">
+                            <div class="camera_caption">
+                                <p>Un esprit convivial</p>
+                            </div>
+                        </div>
+                        <div data-src="application/view/images/img_slider/3.jpg">
+                            <img src="<?= VIEW_PATH ?>images/img_slider/3.jpg" alt="image3_club_tct">
+                            <div class="camera_caption">
+                                <p>Le club house</p>
+                            </div>
+                        </div>
+                        <div data-src="application/view/images/img_slider/4.jpg">
+                            <img src="<?= VIEW_PATH ?>images/img_slider/4.jpg" alt="image4_club_tct">
+                            <div class="camera_caption">
+                                <p>Une cuisine "fait maison"</p>
+                            </div>
+                        </div>
+                        <div data-src="application/view/images/img_slider/5.jpg">
+                            <img src="<?= VIEW_PATH ?>images/img_slider/5.jpg" alt="image5_club_tct">
+                            <div class="camera_caption">
+                                <p>Nos terrains </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end slider -->
+        </article>
+
+        <article >
+            <div class="home_article">
+                <!-- article d'accueil -->
+                <?php foreach ($Homes as $home): ?>
+                    <h2><?= htmlspecialchars($home['title']) ?></h2>
+                <div class="scroll_article">
+                    <p><?= nl2br( $home['textHome'] ) ?></p>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </article>
+    </section>
+
+    <section class="home_container2">
+        <article class="container2">
+            <!-- start slider -->
+            <div class="home_article">
+                <!-- article d'accueil -->
+                <h2>Restaurant le 3 SET : ouvert 7j/7</h2>
+                <div class="scroll_article">
+                    <p>BIENVENUE <br/>
+                        AU RESTAURANT LE 3 SET DE LA VALETTE DU VAR
+                    </p>
+                    <p>Situé dans un cadre idyllique, le club bénéficie d'un environnement très calme dans le var.<br /><br />
+                        Le complexe offre à tous les passionnés de tennis qu'ils soient confirmés ou amateurs, un espace idéal de restauration dans une ambiance conviviale et sportive.<br />
+                    </p>
+                </div>
+            </div>
+            <!-- end slider -->
+
+            <!-- Video -->
+        </article class="home_container3">
+        <article>
+            <div class="container3">
+                <video controls preload="metadata" loop poster="<?= VIEW_PATH ?>video/poster_video.jpg" title="Présentation du club (Vidéo réalisée par Grégory Derycke)">
+                    <source src="<?= VIEW_PATH ?>video/presentation_tct.mp4">
+                </video>
+            </div>
+        </article>
+
+    </section>
+
+    <section class="products_container">
+        <article>
+            <div class="home_article">
+                <h2>Présentation du club Tennis Club Toulonnais</h2>
+                <p>Le club est ouvert de : 8h00 à 21h00.<a title="Club house du TCT" class="logo_reseau" target="_blank" href="https://ballejaune.com/club/TCT"> <img class="site_tct" src=<?php htmlspecialchars(PATH_ROOT) ?>"<?= VIEW_PATH ?>icon/icon.jpg"></a></p>
+                <ul>
+                    <li><i class="fas fa-baseball-ball" style="color: #f3dc0d; text-shadow: -1px 8px 8px #8c8787;"></i> 8 terrains terre-battue extérieurs</li>
+                    <li><i class="fas fa-baseball-ball" style="color: orangered; text-shadow: -1px 8px 8px #8c8787;"></i> 2 terrains terre-battue couverts</li>
+                    <li><i class="fas fa-baseball-ball" style="color: green; text-shadow: -1px 8px 8px #8c8787;"></i> 6 terrains quicks extérieurs</li>
+                    <li><i class="fas fa-baseball-ball" style="color: brown; text-shadow: -1px 8px 8px #8c8787;"></i> 2 terrains de padel</li>
+                    <li><strong>Tous éclairés.</strong></li>
+                </ul>
+
+                <p>Les enfants disposent aussi d'un mur, de 2 terrains mini-tennis, pour s'amuser entre amis et améliorer leur toucher de balle.
+                    Une salle de remise en forme équipée de matériel varié et performant  vient compléter les installations pour offrir un service total aux adhérents.
+                    Au sein du club vous trouverez un restaurant avec TV, une salle de cartes, mais aussi un boulodrome.</p>
+            </div>
+        </article>
+        <article class="box_products">
+            <div class="home_products">
+                <?php foreach ($Products as $Product): ?>
+                    <a href="<?php htmlspecialchars(HOME) ?>?page=user/card"><img src="application/view/images/img_card/<?= $Product['picture'] ?>" alt="image_products" /></a>
+                <?php endforeach; ?>
+            </div>
+        </article>
+    </section>
+
+    <!-- Jquery -->
+    <script src="<?= VIEW_PATH ?>js/jquery-3.3.1.js"></script>
+    <script>window.jQuery || document.write('<script src="<?= VIEW_PATH ?>js/jquery-3.3.1.js"><\/script>')</script>
+    <!--Camera JS with Required jQuery Easing Plugin-->
+    <script src="<?= VIEW_PATH ?>js/easing.min.js" type="text/javascript"></script>
+    <script src="<?= VIEW_PATH ?>js/camera.min.js" type="text/javascript"></script>
+    <!-- Bootstrap Js -->
+    <script src="<?= VIEW_PATH ?>js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- Custom JS --->
+    <script src="<?= VIEW_PATH ?>js/plugins.js"></script>
+
+</main>
